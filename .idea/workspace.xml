@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="solving conflict" />
+    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,14 +14,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="mod-4" />
         <entry key="$PROJECT_DIR$/moderaUserJWT" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="34e46ff7-25a0-4e7b-9587-a988a0a45008" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/moderaUserJWT" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -104,13 +100,6 @@
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
-      <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
-      <path value="$PROJECT_DIR$/vendor/stella-maris/clock" />
-      <path value="$PROJECT_DIR$/vendor/psr/clock" />
-      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
     </include_path>
   </component>
   <component name="ProjectId" id="2N5yBSqhXnGUJW6kEtHD5GuSpoN" />
@@ -119,23 +108,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dim/projects/polygon/symfony-api&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Dim/projects/polygon/symfony-api",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Symfony2.SettingsForm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -145,87 +134,8 @@
       <option name="presentableId" value="Default" />
       <updated>1678968102044</updated>
       <workItem from="1678968105171" duration="7430000" />
-      <workItem from="1678976292186" duration="27309000" />
-      <workItem from="1679052373279" duration="2103000" />
-      <workItem from="1679067683788" duration="789000" />
-      <workItem from="1679068624887" duration="4469000" />
-      <workItem from="1679124939541" duration="7711000" />
-      <workItem from="1679135325277" duration="15102000" />
-      <workItem from="1679167460655" duration="3356000" />
-      <workItem from="1679217701608" duration="45617000" />
-      <workItem from="1679297080280" duration="7420000" />
+      <workItem from="1678976292186" duration="21238000" />
     </task>
-    <task id="LOCAL-00001" summary="register, login !!! NOT JWT and authorisation yet">
-      <created>1679009376579</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1679009376579</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feedback">
-      <created>1679170450045</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1679170450045</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Post, feedback, feedback to file, authorization">
-      <created>1679271897152</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1679271897152</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Weather Forecast for NOW">
-      <created>1679275712960</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1679275712960</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add exception">
-      <created>1679299090264</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1679299090264</updated>
-    </task>
-    <task id="LOCAL-00006" summary="add exception">
-      <created>1679299110302</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1679299110302</updated>
-    </task>
-    <task id="LOCAL-00007" summary="add exception">
-      <created>1679299127250</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1679299127250</updated>
-    </task>
-    <task id="LOCAL-00008" summary="solving conflict">
-      <created>1679322264491</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1679322264491</updated>
-    </task>
-    <task id="LOCAL-00009" summary="solving conflict">
-      <created>1679324233458</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1679324233458</updated>
-    </task>
-    <task id="LOCAL-00010" summary="solving conflict">
-      <created>1679324350259</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1679324350259</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,38 +146,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="mod-3" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/moderaUser" />
-    </ignored-roots>
-    <MESSAGE value="register, login !!! NOT JWT and authorisation yet" />
-    <MESSAGE value="feedback" />
-    <MESSAGE value="Post, feedback, feedback to file, authorization" />
-    <MESSAGE value="Weather Forecast for NOW" />
-    <MESSAGE value="add exception" />
-    <MESSAGE value="solving conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="solving conflict" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
