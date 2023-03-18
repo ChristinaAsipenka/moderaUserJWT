@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="" />
+    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/Controller/UserDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Service/RegistrationService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Service/RegistrationService.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,10 +22,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$" value="main" />
         <entry key="$PROJECT_DIR$/moderaUserJWT" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/moderaUserJWT" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -134,7 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678968102044</updated>
       <workItem from="1678968105171" duration="7430000" />
-      <workItem from="1678976292186" duration="21238000" />
+      <workItem from="1678976292186" duration="26956000" />
     </task>
     <servers />
   </component>
