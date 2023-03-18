@@ -3,19 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-4||-9223372036854775808|c|G
-4||10|c|G
-4||10|C|G
-4||10|T|G
-13755||-9223372036854775808|c|G
-13755||10|c|G
-13755||10|C|G
-13755||10|T|G</Grants>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>767</IntrospectionStateNumber>
       <ServerVersion>14.1</ServerVersion>
       <StartupTime>1679124900</StartupTime>
       <TimeZones>true ACDT
@@ -810,13 +798,10 @@ true posixrules
 2200||10|C|G
 2200||-9223372036854775808|U|G
 2200||10|U|G
-13206||10|C|G
-13206||-9223372036854775808|U|G
-13206||10|U|G
 13390||10|C|G
 13390||-9223372036854775808|U|G
 13390||10|U|G</Grants>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>767</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>app</OwnerName>
     </database>
@@ -4242,74 +4227,86 @@ true posixrules
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>767</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>app</OwnerName>
     </schema>
-    <sequence id="263" parent="262" name="post_id_seq">
+    <sequence id="263" parent="262" name="feedback_id_seq">
+      <DataType>bigint|0s</DataType>
+      <ObjectId>16423</ObjectId>
+      <StateNumber>763</StateNumber>
+      <OwnerName>app</OwnerName>
+    </sequence>
+    <sequence id="264" parent="262" name="post_id_seq">
       <DataType>bigint|0s</DataType>
       <ObjectId>16408</ObjectId>
       <StateNumber>751</StateNumber>
       <OwnerName>app</OwnerName>
     </sequence>
-    <sequence id="264" parent="262" name="rules_id_seq">
+    <sequence id="265" parent="262" name="rules_id_seq">
       <DataType>bigint|0s</DataType>
       <ObjectId>16391</ObjectId>
       <StateNumber>736</StateNumber>
       <OwnerName>app</OwnerName>
     </sequence>
-    <sequence id="265" parent="262" name="user_id_seq">
+    <sequence id="266" parent="262" name="user_id_seq">
       <DataType>bigint|0s</DataType>
       <ObjectId>16398</ObjectId>
       <StateNumber>737</StateNumber>
       <OwnerName>app</OwnerName>
     </sequence>
-    <table id="266" parent="262" name="doctrine_migration_versions">
+    <table id="267" parent="262" name="doctrine_migration_versions">
       <ObjectId>16385</ObjectId>
       <StateNumber>735</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>app</OwnerName>
     </table>
-    <table id="267" parent="262" name="post">
+    <table id="268" parent="262" name="feedback">
+      <ObjectId>16424</ObjectId>
+      <StateNumber>765</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>app</OwnerName>
+    </table>
+    <table id="269" parent="262" name="post">
       <ObjectId>16409</ObjectId>
       <StateNumber>751</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>app</OwnerName>
     </table>
-    <table id="268" parent="262" name="rules">
+    <table id="270" parent="262" name="rules">
       <ObjectId>16392</ObjectId>
       <StateNumber>736</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>app</OwnerName>
     </table>
-    <table id="269" parent="262" name="user">
+    <table id="271" parent="262" name="user">
       <ObjectId>16399</ObjectId>
       <StateNumber>751</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>app</OwnerName>
     </table>
-    <column id="270" parent="266" name="version">
+    <column id="272" parent="267" name="version">
       <DataType>varchar(191)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>735</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="271" parent="266" name="executed_at">
+    <column id="273" parent="267" name="executed_at">
       <DataType>timestamp(0)|0s</DataType>
       <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
       <Position>2</Position>
       <StateNumber>735</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="272" parent="266" name="execution_time">
+    <column id="274" parent="267" name="execution_time">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>735</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="273" parent="266" name="doctrine_migration_versions_pkey">
+    <index id="275" parent="267" name="doctrine_migration_versions_pkey">
       <ColNames>version</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16389</ObjectId>
@@ -4321,42 +4318,124 @@ true posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="274" parent="266" name="doctrine_migration_versions_pkey">
+    <key id="276" parent="267" name="doctrine_migration_versions_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16390</ObjectId>
       <Primary>1</Primary>
       <StateNumber>735</StateNumber>
       <UnderlyingIndexId>16389</UnderlyingIndexId>
     </key>
-    <column id="275" parent="267" name="id">
+    <column id="277" parent="268" name="id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>763</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="278" parent="268" name="owner_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>763</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="279" parent="268" name="rate">
+      <DataType>integer|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>763</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="280" parent="268" name="feedback_text">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>763</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="281" parent="268" name="post_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>765</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="282" parent="268" name="fk_d22944587e3c61f9">
+      <ColNames>owner_id</ColNames>
+      <ObjectId>16430</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>763</StateNumber>
+      <RefTableId>16399</RefTableId>
+      <RefTableName>user</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="283" parent="268" name="fk_d22944584b89032c">
+      <ColNames>post_id</ColNames>
+      <ObjectId>16435</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>765</StateNumber>
+      <RefTableId>16409</RefTableId>
+      <RefTableName>post</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="284" parent="268" name="feedback_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16427</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>763</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="285" parent="268" name="idx_d22944587e3c61f9">
+      <ColNames>owner_id</ColNames>
+      <ObjectId>16429</ObjectId>
+      <StateNumber>763</StateNumber>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="286" parent="268" name="idx_d22944584b89032c">
+      <ColNames>post_id</ColNames>
+      <ObjectId>16440</ObjectId>
+      <StateNumber>765</StateNumber>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="287" parent="268" name="feedback_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16428</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>763</StateNumber>
+      <UnderlyingIndexId>16427</UnderlyingIndexId>
+    </key>
+    <column id="288" parent="269" name="id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>751</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="276" parent="267" name="owner_id">
+    <column id="289" parent="269" name="owner_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>751</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="277" parent="267" name="title">
+    <column id="290" parent="269" name="title">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>751</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="278" parent="267" name="description">
+    <column id="291" parent="269" name="description">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>751</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="279" parent="267" name="created_at">
+    <column id="292" parent="269" name="created_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
@@ -4364,7 +4443,7 @@ true posixrules
       <StateNumber>751</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="280" parent="267" name="updated_at">
+    <column id="293" parent="269" name="updated_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <DataType>timestamp(0)|0s</DataType>
       <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
@@ -4372,7 +4451,7 @@ true posixrules
       <StateNumber>751</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <foreign-key id="281" parent="267" name="fk_5a8a6c8d7e3c61f9">
+    <foreign-key id="294" parent="269" name="fk_5a8a6c8d7e3c61f9">
       <ColNames>owner_id</ColNames>
       <ObjectId>16418</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4382,7 +4461,7 @@ true posixrules
       <RefTableName>user</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="282" parent="267" name="post_pkey">
+    <index id="295" parent="269" name="post_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16415</ObjectId>
@@ -4391,34 +4470,34 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="283" parent="267" name="idx_5a8a6c8d7e3c61f9">
+    <index id="296" parent="269" name="idx_5a8a6c8d7e3c61f9">
       <ColNames>owner_id</ColNames>
       <ObjectId>16417</ObjectId>
       <StateNumber>751</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="284" parent="267" name="post_pkey">
+    <key id="297" parent="269" name="post_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16416</ObjectId>
       <Primary>1</Primary>
       <StateNumber>751</StateNumber>
       <UnderlyingIndexId>16415</UnderlyingIndexId>
     </key>
-    <column id="285" parent="268" name="id">
+    <column id="298" parent="270" name="id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>736</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="286" parent="268" name="name">
+    <column id="299" parent="270" name="name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>736</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="287" parent="268" name="created_at">
+    <column id="300" parent="270" name="created_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
@@ -4426,7 +4505,7 @@ true posixrules
       <StateNumber>736</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="288" parent="268" name="updated_at">
+    <column id="301" parent="270" name="updated_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <DataType>timestamp(0)|0s</DataType>
       <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
@@ -4434,7 +4513,7 @@ true posixrules
       <StateNumber>736</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="289" parent="268" name="rules_pkey">
+    <index id="302" parent="270" name="rules_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16396</ObjectId>
@@ -4443,49 +4522,49 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="290" parent="268" name="rules_pkey">
+    <key id="303" parent="270" name="rules_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16397</ObjectId>
       <Primary>1</Primary>
       <StateNumber>736</StateNumber>
       <UnderlyingIndexId>16396</UnderlyingIndexId>
     </key>
-    <column id="291" parent="269" name="id">
+    <column id="304" parent="271" name="id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>737</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="292" parent="269" name="email">
+    <column id="305" parent="271" name="email">
       <DataType>varchar(180)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>737</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="293" parent="269" name="roles">
+    <column id="306" parent="271" name="roles">
       <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>737</StateNumber>
       <TypeId>114</TypeId>
     </column>
-    <column id="294" parent="269" name="password">
+    <column id="307" parent="271" name="password">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>737</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="295" parent="269" name="name">
+    <column id="308" parent="271" name="name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>737</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="296" parent="269" name="created_at">
+    <column id="309" parent="271" name="created_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <DataType>timestamp(0)|0s</DataType>
       <NotNull>1</NotNull>
@@ -4493,7 +4572,7 @@ true posixrules
       <StateNumber>737</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="297" parent="269" name="updated_at">
+    <column id="310" parent="271" name="updated_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <DataType>timestamp(0)|0s</DataType>
       <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
@@ -4501,7 +4580,7 @@ true posixrules
       <StateNumber>737</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="298" parent="269" name="user_pkey">
+    <index id="311" parent="271" name="user_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16405</ObjectId>
@@ -4510,7 +4589,7 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="299" parent="269" name="uniq_8d93d649e7927c74">
+    <index id="312" parent="271" name="uniq_8d93d649e7927c74">
       <ColNames>email</ColNames>
       <ObjectId>16407</ObjectId>
       <StateNumber>737</StateNumber>
@@ -4520,7 +4599,7 @@ true posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="300" parent="269" name="user_pkey">
+    <key id="313" parent="271" name="user_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16406</ObjectId>
       <Primary>1</Primary>

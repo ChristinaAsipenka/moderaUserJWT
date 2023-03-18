@@ -25,6 +25,10 @@ class Feedback
     #[ORM\Column(length: 255)]
     private ?string $feedback_text = null;
 
+    #[ORM\ManyToOne(inversedBy: 'feedback')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?post $post = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -62,6 +66,18 @@ class Feedback
     public function setFeedbackText(string $feedback_text): self
     {
         $this->feedback_text = $feedback_text;
+
+        return $this;
+    }
+
+    public function getPost(): ?post
+    {
+        return $this->post;
+    }
+
+    public function setPost(?post $post): self
+    {
+        $this->post = $post;
 
         return $this;
     }
