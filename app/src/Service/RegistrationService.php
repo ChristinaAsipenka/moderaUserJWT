@@ -21,7 +21,7 @@ class RegistrationService
 
     public function createNewUser(NewUserDTO $newUserDTO)
     {
-        if ($this->isUserExist($newUserDTO->email) === null) {
+        if ($this->isUserExist($newUserDTO->getEmail()) === null) {
 
             $timestamp = new DateTimeImmutable(date('d.m.Y H:i:s'));
             $user = new User();
