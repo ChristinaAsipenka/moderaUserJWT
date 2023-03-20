@@ -57,13 +57,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeImmutable $updated_at = null;
 
     #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Feedback::class)]
-    private Collection $feedback;
+    private Collection $feedbacks;
+
+ //   #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Feedback::class)]
+   // private Collection $feedback;
 
 
     public function __construct()
     {
-        $this->posts = new ArrayCollection();
-        $this->feedback = new ArrayCollection();
+      //  $this->posts = new ArrayCollection();
+      //  $this->feedback = new ArrayCollection();
+      $this->feedback2s = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -205,7 +209,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @return Collection<int, Feedback>
      */
-    public function getFeedback(): Collection
+   /*public function getFeedback(): Collection
     {
         return $this->feedback;
     }
@@ -218,9 +222,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
-    }
+    }*/
 
-    public function removeFeedback(Feedback $feedback): self
+  /*  public function removeFeedback(Feedback $feedback): self
     {
         if ($this->feedback->removeElement($feedback)) {
             // set the owning side to null (unless already changed)
@@ -230,5 +234,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
-    }
+    }*/
+
+  /**
+   * @return Collection<int, Feedback2>
+   */
+  public function getFeedbacks(): Collection
+  {
+      return $this->feedbacks;
+  }
+
+  public function addFeedback2(Feedback $feedback): self
+  {
+      if (!$this->feedbacks->contains($feedback)) {
+          $this->feedbacks->add($feedback);
+          $feedback->setOwner($this);
+      }
+
+      return $this;
+  }
+
+  public function removeFeedback(Feedback $feedback): self
+  {
+      if ($this->feedbacks->removeElement($feedback)) {
+          // set the owning side to null (unless already changed)
+          if ($feedback->getOwner() === $this) {
+              $feedback->setOwner(null);
+          }
+      }
+
+      return $this;
+  }
 }

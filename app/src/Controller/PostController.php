@@ -3,10 +3,7 @@
 namespace App\Controller;
 
 use App\DTO\PostDTO;
-use App\Entity\Post;
-use App\Entity\User;
 use App\Service\PostService;
-use App\Service\UserService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,13 +15,11 @@ use Symfony\Component\Serializer\SerializerInterface;
 class PostController extends AbstractController
 {
     private PostService $postService;
-    private User $currentUser;
     private SerializerInterface $serializer;
 
-    public function __construct(UserService $userService,PostService $postService,SerializerInterface $serializer)
+    public function __construct(PostService $postService,SerializerInterface $serializer)
     {
         $this->postService = $postService;
-        $this->currentUser = $userService->getCurrentUser();
         $this->serializer = $serializer;
     }
 
@@ -32,7 +27,6 @@ class PostController extends AbstractController
     public function createPost(Request $request): JsonResponse
     {
         $strForDTO = json_decode($request->getContent(), true);
-        $strForDTO['owner'] = $this->currentUser;
         $resultDTO = $this->serializer->deserialize(json_encode($strForDTO), PostDTO::class, 'json');
         $message = $this->postService->create($resultDTO);
         $body = [

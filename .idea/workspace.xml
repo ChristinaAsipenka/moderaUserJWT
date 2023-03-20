@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="register, login !!! NOT JWT and authorisation yet">
+    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="feedback">
+      <change afterPath="$PROJECT_DIR$/app/migrations/Version20230318195605.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/migrations/Version20230318200656.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/migrations/Version20230319104607.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Config/FeedbackType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Config/FeedbackTypeConverter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Controller/FeedbackController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Controller/ReportController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/DTO/FeedbackDTO.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/DoctrineType/AbstractEnumType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Entity/FeedbackType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Repository/FeedbackTypeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Service/FeedbackService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Service/FileService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/Service/ReportService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361/storage_v2/_src_/database/app.IXoBAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361/storage_v2/_src_/database/app.IXoBAA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Entity/Feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/Feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +150,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Dim/projects/moderaUserJWT",
+    "last_opened_file_path": "C:/Users/Dim/projects/moderaUserJWT/app/src",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
@@ -156,7 +177,8 @@
       <workItem from="1679068624887" duration="4469000" />
       <workItem from="1679124939541" duration="7711000" />
       <workItem from="1679135325277" duration="15102000" />
-      <workItem from="1679167460655" duration="1746000" />
+      <workItem from="1679167460655" duration="3356000" />
+      <workItem from="1679217701608" duration="41376000" />
     </task>
     <task id="LOCAL-00001" summary="register, login !!! NOT JWT and authorisation yet">
       <created>1679009376579</created>
@@ -165,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679009376579</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feedback">
+      <created>1679170450045</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679170450045</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +205,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="mod-3" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -187,7 +228,8 @@
       <path value="$PROJECT_DIR$/moderaUser" />
     </ignored-roots>
     <MESSAGE value="register, login !!! NOT JWT and authorisation yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="register, login !!! NOT JWT and authorisation yet" />
+    <MESSAGE value="feedback" />
+    <option name="LAST_COMMIT_MESSAGE" value="feedback" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

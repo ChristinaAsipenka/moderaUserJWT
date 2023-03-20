@@ -28,16 +28,20 @@ class Post
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updated_at = null;
 
-    #[ORM\ManyToOne(inversedBy: 'posts')]
+    #[ORM\ManyToOne(inversedBy: 'Posts')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $owner = null;
 
-    #[ORM\OneToMany(mappedBy: 'post', targetEntity: Feedback::class)]
-    private Collection $feedback;
+    #[ORM\OneToMany(mappedBy: 'Post', targetEntity: Feedback::class)]
+    private Collection $feedbacks;
+
+   // #[ORM\OneToOne(mappedBy: 'Post', targetEntity: Feedback::class)]
+   // private Collection $feedback;
 
     public function __construct()
     {
-        $this->feedback = new ArrayCollection();
+        //$this->feedback = new ArrayCollection();
+        $this->feedbacks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -108,7 +112,7 @@ class Post
     /**
      * @return Collection<int, Feedback>
      */
-    public function getFeedback(): Collection
+   /* public function getFeedback(): Collection
     {
         return $this->feedback;
     }
@@ -133,5 +137,35 @@ class Post
         }
 
         return $this;
-    }
+    }*/
+
+   /**
+    * @return Collection<int, Feedback2>
+    */
+   public function getFeedbacks(): Collection
+   {
+       return $this->feedbacks;
+   }
+
+   public function addFeedback(Feedback $feedback): self
+   {
+       if (!$this->feedbacks->contains($feedback)) {
+           $this->feedbacks->add($feedback);
+           $feedback->setPost($this);
+       }
+
+       return $this;
+   }
+
+   public function removeFeedback(Feedback $feedback): self
+   {
+       if ($this->feedbacks->removeElement($feedback)) {
+           // set the owning side to null (unless already changed)
+           if ($feedback->getPost() === $this) {
+               $feedback->setPost(null);
+           }
+       }
+
+       return $this;
+   }
 }
