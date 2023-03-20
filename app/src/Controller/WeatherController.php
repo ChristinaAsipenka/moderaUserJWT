@@ -14,7 +14,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class WeatherController extends AbstractController
 {
-    private const X_RAPID_API_KEY = "23d8835674mshc437a941587e974p1eb586jsn1bd9920f697";
+    private const X_RAPID_API_KEY = "23d8835674mshc437a941587e974p1eb586jsn1bd9920f6970";
     private const X_RAPID_API_HOST = "open-weather13.p.rapidapi.com";
     private const WEATHER_URL = "https://open-weather13.p.rapidapi.com/city/";
 
