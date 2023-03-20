@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="feedback">
-      <change afterPath="$PROJECT_DIR$/app/migrations/Version20230318195605.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/Version20230318200656.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/Version20230319104607.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Config/FeedbackType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Config/FeedbackTypeConverter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Controller/FeedbackController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Controller/ReportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/DTO/FeedbackDTO.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/DoctrineType/AbstractEnumType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Entity/FeedbackType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Repository/FeedbackTypeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Service/FeedbackService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Service/FileService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Service/ReportService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361/storage_v2/_src_/database/app.IXoBAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/85fd0953-8084-4546-8fb3-c293894b0361/storage_v2/_src_/database/app.IXoBAA/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="ff662666-9170-4311-a4dd-dcd1047aca95" name="Changes" comment="add exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Entity/Feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/Feedback.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="mod-3" />
         <entry key="$PROJECT_DIR$/moderaUserJWT" value="main" />
       </map>
     </option>
@@ -150,7 +126,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Dim/projects/moderaUserJWT/app/src",
+    "last_opened_file_path": "C:/Users/Dim/projects/polygon/symfony-api",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
@@ -178,7 +154,8 @@
       <workItem from="1679124939541" duration="7711000" />
       <workItem from="1679135325277" duration="15102000" />
       <workItem from="1679167460655" duration="3356000" />
-      <workItem from="1679217701608" duration="41376000" />
+      <workItem from="1679217701608" duration="45617000" />
+      <workItem from="1679297080280" duration="5090000" />
     </task>
     <task id="LOCAL-00001" summary="register, login !!! NOT JWT and authorisation yet">
       <created>1679009376579</created>
@@ -194,7 +171,42 @@
       <option name="project" value="LOCAL" />
       <updated>1679170450045</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Post, feedback, feedback to file, authorization">
+      <created>1679271897152</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679271897152</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Weather Forecast for NOW">
+      <created>1679275712960</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679275712960</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add exception">
+      <created>1679299090264</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679299090264</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add exception">
+      <created>1679299110302</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679299110302</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add exception">
+      <created>1679299127250</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679299127250</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +241,10 @@
     </ignored-roots>
     <MESSAGE value="register, login !!! NOT JWT and authorisation yet" />
     <MESSAGE value="feedback" />
-    <option name="LAST_COMMIT_MESSAGE" value="feedback" />
+    <MESSAGE value="Post, feedback, feedback to file, authorization" />
+    <MESSAGE value="Weather Forecast for NOW" />
+    <MESSAGE value="add exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="add exception" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
