@@ -4,11 +4,14 @@ namespace App\Controller;
 
 use App\Service\FileService;
 use App\Service\ReportService;
+use Nelmio\ApiDocBundle\Annotation\Security;
+use OpenApi\Attributes\JsonContent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use OpenApi\Attributes as OA;
 
 class ReportController extends AbstractController
 {
@@ -20,6 +23,10 @@ class ReportController extends AbstractController
     }
 
     #[Route('/user/report', name: 'app_report_getreport',methods: 'GET')]
+    #[OA\RequestBody(required: true, content: new JsonContent(example: '{"from":"2023-03-18 16:48:17", "till":"2023-03-18 16:48:17"'))]
+    #[OA\Response(response: 200, description: 'Returns success "true"',content: new OA\JsonContent( example: "{'success':true}"))]
+    #[OA\Tag(name: 'Report')]
+    #[Security(name: 'Bearer')]
     public function getReport(Request $request, ReportService $reportService): JsonResponse
     {
         $data = json_decode($request->getContent(),true);
@@ -27,11 +34,10 @@ class ReportController extends AbstractController
         $from = (strlen($data['from']) !== 0 ? $data['from'] : null);
         $till = (strlen($data['till']) !== 0 ? $data['till'] : null);
         $res_array = $reportService->makeReport($from,$till);
-        $file = $this->fileService->createFile($res_array);
-
         $message = [
             "success"=> true,
-            "file" => $file
+            "file" => "http://localhost:8080/". $this->fileService->createFile($res_array),
+            "fileSecond" => $this->getParameter('kernel.project_dir'). $this->fileService->createFile($res_array)
         ];
 
         return new JsonResponse($message, Response::HTTP_OK);

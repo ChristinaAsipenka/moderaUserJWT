@@ -5,13 +5,17 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use OpenApi\Attributes\JsonContent;
+use OpenApi\Attributes as OA;
 
+#[AsController]
 class WeatherController extends AbstractController
 {
     private const X_RAPID_API_KEY = "23d8835674mshc437a941587e974p1eb586jsn1bd9920f6970";
@@ -27,7 +31,14 @@ class WeatherController extends AbstractController
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    #[Route('/weather', name: 'app_weather_getforecast', methods: 'GET')]
+    #[Route('/weather', name: 'app_weather_getforecast', methods: ['GET'])]
+    #[OA\Get]
+    #[OA\RequestBody(required: true, content: new JsonContent(example: '{"city":"Krakow"}'))]
+    #[OA\Response(response: 200,description: 'Returns forecast',content: new OA\JsonContent(type: 'json',))]
+    #[OA\Response(response: 403,description: 'Forbidden',content: new OA\JsonContent(type: 'json',))]
+    #[OA\Response(response: 500,description: 'Internal Server Error')]
+
+    #[OA\Tag(name: 'weather')]
     public function getForecast(Request $request, HttpClientInterface $client): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
