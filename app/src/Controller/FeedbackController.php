@@ -33,8 +33,19 @@ class FeedbackController extends AbstractController
     {
         $strForDTO = json_decode($request->getContent(), true);
         $resultDTO = $this->serializer->deserialize(json_encode($strForDTO), FeedbackDTO::class, 'json');
-        $message = $this->feedbackService->addFeedback($resultDTO);
+        try {
+            $message = $this->feedbackService->addFeedback($resultDTO);
+            return new JsonResponse($message, Response::HTTP_OK);
+        }catch (\Exception $exception) {
+            return new JsonResponse(
+                [
+                    'success' => false,
+                    'body' => [
+                        'message' => $exception->getMessage(),
+                    ],
+                ],
+                $exception->getCode());
+        }
 
-        return new JsonResponse($message, Response::HTTP_OK);
     }
 }

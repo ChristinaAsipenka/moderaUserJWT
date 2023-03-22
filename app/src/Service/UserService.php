@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Entity\User;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
@@ -31,7 +32,7 @@ class UserService
             return $user;
 
         } else {
-            return null;
+            throw new \DomainException('Not authorize', Response::HTTP_UNAUTHORIZED);
         }
     }
 }

@@ -47,7 +47,19 @@ class RegistrationController extends AbstractController
     {
         $strForDTO = json_decode($request->getContent(), true);
         $resultDTO = $this->serializer->deserialize(json_encode($strForDTO), NewUserDTO::class, 'json');
-        $this->registrationService->createNewUser($resultDTO);
+        try {
+            $this->registrationService->createNewUser($resultDTO);
+        }catch (\Exception $exception) {
+            return new JsonResponse(
+                [
+                    'success' => false,
+                    'body' => [
+                        'message' => $exception->getMessage(),
+                    ],
+                ],
+                $exception->getCode());
+        }
+
 
         return new JsonResponse(["success"=>true], Response::HTTP_OK);
     }
