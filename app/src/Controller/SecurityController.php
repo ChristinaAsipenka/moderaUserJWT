@@ -23,7 +23,7 @@ class SecurityController extends AbstractController
         $this->passwordHasher = $passwordHasher;
     }
     /**
-     * @param Request $request
+     * @param Request $request ('email', 'password')
      * @return void
      */
     #[Route('/login', name:'login', methods:'POST')]
@@ -37,10 +37,8 @@ class SecurityController extends AbstractController
                 'success' => false,
                 'body' => ['message' => 'Invalid login'],
             ];
-
             return new JsonResponse($response, Response::HTTP_BAD_REQUEST);
         }
-
         return new JsonResponse(['success' => true], Response::HTTP_OK);
     }
 }

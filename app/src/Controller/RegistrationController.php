@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+
 use OpenApi\Attributes as OA;
+
 use App\DTO\NewUserDTO;
 use App\Service\RegistrationService;
 use OpenApi\Attributes\JsonContent;
@@ -13,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
+
 #[AsController]
 class RegistrationController extends AbstractController
 {
@@ -27,6 +30,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
+
      * @param Request $request
      * @return JsonResponse
      */
@@ -34,7 +38,11 @@ class RegistrationController extends AbstractController
     #[OA\Response(response: 200,description: 'Returns success "true"',content: new OA\JsonContent( example: "{'success':true}"))]
     #[OA\RequestBody(required: true, content: new JsonContent(example: '{"email":"user@example.com", "password":"123456", "name": "Sherlock Holmes"}'))]
     #[OA\Tag(name: 'registration')]
-
+    
+     * @param Request $request ('email', 'password', 'name')
+     * @return JsonResponse
+     */
+    #[Route('/register', name:'register', methods:'POST')]
     public function newUserRegistration(Request $request): JsonResponse
     {
         $strForDTO = json_decode($request->getContent(), true);
