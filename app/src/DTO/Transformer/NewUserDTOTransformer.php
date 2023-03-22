@@ -1,10 +1,11 @@
 <?php
-namespace App\TransformerDTO;
+
+namespace App\DTO\Transformer;
 
 use App\DTO\NewUserDTO;
 use Symfony\Component\HttpFoundation\Request;
 
-class NewUserTransformerDTO
+class NewUserDTOTransformer
 {
     public function transform(Request $request): NewUserDTO
     {

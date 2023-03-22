@@ -3,11 +3,11 @@ namespace App\DTO;
 
 class NewUserDTO
 {
-    public string $email;
+    private string $email;
 
-    public string $name;
+    private string $name;
 
-    public string $password;
+    private string $password;
 
     /**
      * @return string

@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use ApiPlatform\Metadata\ApiProperty;
 use App\DTO\NewUserDTO;
 use App\Service\RegistrationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
+
 #[AsController]
 class RegistrationController extends AbstractController
 {
@@ -25,6 +25,10 @@ class RegistrationController extends AbstractController
         $this->registrationService = $registrationService;
     }
 
+    /**
+     * @param Request $request ('email', 'password', 'name')
+     * @return JsonResponse
+     */
     #[Route('/register', name:'register', methods:'POST')]
     public function newUserRegistration(Request $request): JsonResponse
     {

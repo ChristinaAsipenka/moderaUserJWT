@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-#[ApiResource(
+/*#[ApiResource(
     operations: [
         new GetCollection(),
         new Post(uriTemplate: 'register'),
@@ -23,7 +23,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
         new Patch(),
         new Delete(),
     ]
-)]
+)]*/
 
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
@@ -59,15 +59,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Feedback::class)]
     private Collection $feedbacks;
 
- //   #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Feedback::class)]
-   // private Collection $feedback;
-
-
     public function __construct()
     {
-      //  $this->posts = new ArrayCollection();
-      //  $this->feedback = new ArrayCollection();
-      $this->feedback2s = new ArrayCollection();
+        $this->posts = new ArrayCollection();
+        $this->feedbacks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -206,38 +201,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Feedback>
-     */
-   /*public function getFeedback(): Collection
-    {
-        return $this->feedback;
-    }
-
-    public function addFeedback(Feedback $feedback): self
-    {
-        if (!$this->feedback->contains($feedback)) {
-            $this->feedback->add($feedback);
-            $feedback->setOwner($this);
-        }
-
-        return $this;
-    }*/
-
-  /*  public function removeFeedback(Feedback $feedback): self
-    {
-        if ($this->feedback->removeElement($feedback)) {
-            // set the owning side to null (unless already changed)
-            if ($feedback->getOwner() === $this) {
-                $feedback->setOwner(null);
-            }
-        }
-
-        return $this;
-    }*/
 
   /**
-   * @return Collection<int, Feedback2>
+   * @return Collection<int, Feedback>
    */
   public function getFeedbacks(): Collection
   {
