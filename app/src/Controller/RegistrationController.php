@@ -48,7 +48,7 @@ class RegistrationController extends AbstractController
         $strForDTO = json_decode($request->getContent(), true);
         $resultDTO = $this->serializer->deserialize(json_encode($strForDTO), NewUserDTO::class, 'json');
         try {
-            $this->registrationService->createNewUser($resultDTO);
+            $message = $this->registrationService->createNewUser($resultDTO);
         }catch (\Exception $exception) {
             return new JsonResponse(
                 [
@@ -59,6 +59,6 @@ class RegistrationController extends AbstractController
                 ],
                 $exception->getCode());
         }
-        return new JsonResponse(["success"=>true], Response::HTTP_OK);
+        return new JsonResponse($message, Response::HTTP_OK);
     }
 }

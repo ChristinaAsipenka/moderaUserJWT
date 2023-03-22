@@ -22,14 +22,13 @@ class ReportService
     {
 
         $id_user = (in_array(self::ROLE_ADMIN, $this->currentUser->getRoles()) ? null : $this->currentUser->getId());
-
         $blockWhere = $blockUser = $blockFrom = $blockTill = "";
         $parameters = ['text' => 'How I like it',
                       'text2' => 'Will I recommend this post to my friends'];
         if ($id_user !== null || $from !== null || $till !== null) {
             $blockWhere =" WHERE";
             if ($id_user !== null ){
-                $blockUser = " post.owner = :id_user ";
+                $blockUser = " post.owner_id = :id_user ";
                 $parameters = array_merge($parameters, ['id_user'=> $id_user]);
             }
 

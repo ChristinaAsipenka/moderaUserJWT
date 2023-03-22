@@ -38,8 +38,12 @@ class PostService
         if ($postUpd !== null) {
             if ($this->currentUser === $postUpd->getOwner() || in_array("ROLE_ADMIN", $this->currentUser->getRoles())) {
                 $timestamp = new \DateTimeImmutable(date('d.m.Y H:i:s'));
-                $postUpd->setTitle($postDTO->getTitle());
-                $postUpd->setDescription($postDTO->getDescription());
+                if ($postDTO->getTitle()) {
+                    $postUpd->setTitle($postDTO->getTitle());
+                }
+                if ($postDTO->getDescription()) {
+                    $postUpd->setDescription($postDTO->getDescription());
+                }
                 $postUpd->setUpdatedAt($timestamp);
                 $this->entityManager->persist($postUpd);
                 $this->entityManager->flush();

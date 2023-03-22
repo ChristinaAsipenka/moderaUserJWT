@@ -6,6 +6,7 @@ use App\DTO\NewUserDTO;
 use App\Entity\User;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class RegistrationService
@@ -19,7 +20,7 @@ class RegistrationService
         $this->passwordHasher = $passwordHasher;
     }
 
-    public function createNewUser(NewUserDTO $newUserDTO)
+    public function createNewUser(NewUserDTO $newUserDTO): string
     {
         if ($this->isUserExist($newUserDTO->getEmail()) === null) {
 
@@ -37,7 +38,9 @@ class RegistrationService
             $this->entityManager->persist($user);
             $this->entityManager->flush();
 
+            return "User created";
         }
+        throw new \DomainException("User already exist", Response::HTTP_FORBIDDEN);
     }
 
     public function isUserExist(string $email)
