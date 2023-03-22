@@ -92,26 +92,35 @@ class PostController extends AbstractController
     #[Security(name: 'Bearer')]
     public function getPost(int $id): JsonResponse
     {
-        $post = $this->postService->getPost($id);
-
-        if ( $post !== null ){
-            $message =[
-                "success"=>true,
-                "body"=>[
-                    "title"=>$post->getTitle(),
-                    "description" => $post -> getDescription(),
-                    "created" => $post -> getCreatedAt(),
-                    "updated" => $post -> getUpdatedAt()
-                ]
-            ];
-        } else {
-            $message =[
-                "success"=>true,
-                "message" => "Post does not exist"
-            ];
+        try {
+            $post = $this->postService->getPost($id);
+            if ( $post !== null ){
+                $message =[
+                    "success"=>true,
+                    "body"=>[
+                        "title"=>$post->getTitle(),
+                        "description" => $post -> getDescription(),
+                        "created" => $post -> getCreatedAt(),
+                        "updated" => $post -> getUpdatedAt()
+                    ]
+                ];
+            } else {
+                $message =[
+                    "success"=>true,
+                    "message" => "Post does not exist"
+                ];
+            }
+            return new JsonResponse($message, Response::HTTP_OK);
+        }catch (\Throwable $exception) {
+            return new JsonResponse(
+                [
+                    'success' => false,
+                    'body' => [
+                        'message' => $exception->getMessage(),
+                    ],
+                ],
+                $exception->getCode());
         }
-
-        return new JsonResponse($message, Response::HTTP_OK);
     }
 
     #[Route('/user/post/{id}', name:'app_post_deletepost', methods:'DELETE')]
