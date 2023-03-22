@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /*#[ApiResource(
     operations: [
         new GetCollection(),
-        new Post(uriTemplate: 'register'),
+        new Post(uriTemplate: 'registration'),
         new Get(),
         new Patch(),
         new Delete(),

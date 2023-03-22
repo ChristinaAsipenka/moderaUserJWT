@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FeedbackRepository::class)]
 
+//#[ApiResource]
+
 class Feedback
 {
     #[ORM\Id]
