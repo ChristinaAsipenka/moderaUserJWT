@@ -1,0 +1,20 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: TEST
+            description: Modera TEST
+            version: 1.0.0
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+        security:
+            Bearer: []
+    areas: # to filter documented areas
+        path_patterns:
+            #- ^/api(?!/doc$) # Accepts routes under /api except /api/doc
+            - /weather
+            - /registration
+            - ^/admin
+            - ^/user
