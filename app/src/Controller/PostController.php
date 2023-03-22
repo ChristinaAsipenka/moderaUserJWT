@@ -38,12 +38,25 @@ class PostController extends AbstractController
     {
         $strForDTO = json_decode($request->getContent(), true);
         $resultDTO = $this->serializer->deserialize(json_encode($strForDTO), PostDTO::class, 'json');
-        $message = $this->postService->create($resultDTO);
-        $body = [
-            "success"=>true,
-            "message" => $message
-        ];
-        return new JsonResponse($body, Response::HTTP_OK);
+        try {
+            $message = $this->postService->create($resultDTO);
+            $body = [
+                "success"=>true,
+                "message" => $message
+            ];
+            return new JsonResponse($body, Response::HTTP_OK);
+        }catch (\Exception $exception) {
+            return new JsonResponse(
+                [
+                    'success' => false,
+                    'body' => [
+                        'message' => $exception->getMessage(),
+                    ],
+                ],
+                $exception->getCode());
+        }
+
+
     }
 
     #[Route('/user/post/{id}', name:'app_post_updatepost', methods:'PUT')]
