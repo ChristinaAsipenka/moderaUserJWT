@@ -7,7 +7,7 @@ use App\Repository\RulesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RulesRepository::class)]
-#[ApiResource]
+
 class Rules
 {
     #[ORM\Id]
