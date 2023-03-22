@@ -38,7 +38,7 @@ class RegistrationController extends AbstractController
     #[OA\Response(response: 200,description: 'Returns success "true"',content: new OA\JsonContent( example: "{'success':true}"))]
     #[OA\RequestBody(required: true, content: new JsonContent(example: '{"email":"user@example.com", "password":"123456", "name": "Sherlock Holmes"}'))]
     #[OA\Tag(name: 'registration')]
-    
+    /*
      * @param Request $request ('email', 'password', 'name')
      * @return JsonResponse
      */

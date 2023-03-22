@@ -22,7 +22,7 @@ class UserDataController extends AbstractController
     }
 
     #[Route('/admin/user/{id}', name: 'user_data_one', methods: 'GET')]
-    #[OA\Response(response: 200, description: 'Returns Users info', content: new OA\JsonContent(example: ' "success": true,
+    #[OA\Response(response: 200, description: 'Returns Users info', content: new OA\JsonContent(example: ' {"success": true,
                   "body": {
                     "id": 2,
                     "email": "test2@test.com",
@@ -36,7 +36,7 @@ class UserDataController extends AbstractController
                       "timezone": "UTC"
                     },
                     "updated at": null
-                  }'))]
+                  }}'))]
     #[Security(name: 'Bearer')]
     #[OA\Tag(name: 'user')]
     public function UserDataOne(int $id)
