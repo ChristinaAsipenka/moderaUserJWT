@@ -2,15 +2,17 @@
 
 namespace App\Controller;
 
+use ApiPlatform\Metadata\ApiProperty;
 use App\DTO\NewUserDTO;
 use App\Service\RegistrationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
-
+#[AsController]
 class RegistrationController extends AbstractController
 {
     private SerializerInterface $serializer;

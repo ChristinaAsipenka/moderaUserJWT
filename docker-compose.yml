@@ -16,7 +16,7 @@ services:
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
             - php74-service
-        #    - mysql8-service
+            - db
         networks:
             - nginx-php74-mysql8-node
 
@@ -51,16 +51,19 @@ services:
     #        - nginx-php74-mysql8-node
     db:
         image: postgres:14.1-alpine
+        container_name: db
         restart: always
         environment:
             - POSTGRES_USER=app
             - POSTGRES_PASSWORD=!ChangeMe!
+            - POSTGRES_HOST_AUTH_METHOD=trust
         ports:
             - '5432:5432'
         volumes:
             - db:/var/lib/postgresql/data
         networks:
             - nginx-php74-mysql8-node
+            
     # node
     node-service:
         image: node:latest
