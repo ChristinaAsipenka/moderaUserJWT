@@ -59,8 +59,6 @@ class RegistrationController extends AbstractController
                 ],
                 $exception->getCode());
         }
-
-
         return new JsonResponse(["success"=>true], Response::HTTP_OK);
     }
 }

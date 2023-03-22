@@ -33,13 +33,24 @@ class ReportController extends AbstractController
 
         $from = (strlen($data['from']) !== 0 ? $data['from'] : null);
         $till = (strlen($data['till']) !== 0 ? $data['till'] : null);
-        $res_array = $reportService->makeReport($from,$till);
-        $message = [
-            "success"=> true,
-            "file" => "http://localhost:8080/". $this->fileService->createFile($res_array),
-            "fileSecond" => $this->getParameter('kernel.project_dir'). $this->fileService->createFile($res_array)
-        ];
+        try {
+            $res_array = $reportService->makeReport($from,$till);
+            $message = [
+                "success"=> true,
+                "file" => "http://localhost:8080/". $this->fileService->createFile($res_array),
+                "fileSecond" => $this->getParameter('kernel.project_dir'). $this->fileService->createFile($res_array)
+            ];
 
-        return new JsonResponse($message, Response::HTTP_OK);
+            return new JsonResponse($message, Response::HTTP_OK);
+        }catch (\Exception $exception) {
+            return new JsonResponse(
+                [
+                    'success' => false,
+                    'body' => [
+                        'message' => $exception->getMessage(),
+                    ],
+                ],
+                $exception->getCode());
+        }
     }
 }
